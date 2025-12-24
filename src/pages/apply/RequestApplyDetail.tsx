@@ -174,16 +174,16 @@ export function RequestApplyDetail() {
           <div className="p-4">
             <Table>
               <TableBody>
-                <TableRow className="hover:bg-transparent dark:hover:bg-transparent border-b border-gray-200 dark:border-gray-800">
+                <TableRow className="hover:bg-transparent dark:hover:bg-transparent border-0">
                   <TableCell className="font-bold text-gray-700 dark:text-gray-300 w-1/6 !p-3 border-r border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">교육기관 ID</TableCell>
-                  <TableCell className="text-gray-900 dark:text-gray-100 !p-3 border-r border-gray-200 dark:border-gray-800">{data.institutionId}</TableCell>
+                  <TableCell className="text-gray-900 dark:text-gray-100 !p-3 border-r border-gray-200 dark:border-gray-800 w-1/3">{data.institutionId}</TableCell>
                   <TableCell className="font-bold text-gray-700 dark:text-gray-300 w-1/6 !p-3 border-l border-r border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">소속명</TableCell>
                   <TableCell className="text-gray-900 dark:text-gray-100 !p-3">{data.affiliationName}</TableCell>
                 </TableRow>
                 <TableRow className="hover:bg-transparent dark:hover:bg-transparent border-0">
-                  <TableCell className="font-bold text-gray-700 dark:text-gray-300 !p-3 border-r border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">교육기관명</TableCell>
-                  <TableCell className="text-gray-900 dark:text-gray-100 !p-3 border-r border-gray-200 dark:border-gray-800">{data.institutionName}</TableCell>
-                  <TableCell className="font-bold text-gray-700 dark:text-gray-300 !p-3 border-l border-r border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">주소</TableCell>
+                  <TableCell className="font-bold text-gray-700 dark:text-gray-300 w-1/6 !p-3 border-r border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">교육기관명</TableCell>
+                  <TableCell className="text-gray-900 dark:text-gray-100 !p-3 border-r border-gray-200 dark:border-gray-800 w-1/3">{data.institutionName}</TableCell>
+                  <TableCell className="font-bold text-gray-700 dark:text-gray-300 w-1/6 !p-3 border-l border-r border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900">주소</TableCell>
                   <TableCell className="text-gray-900 dark:text-gray-100 !p-3">{data.address}</TableCell>
                 </TableRow>
               </TableBody>
