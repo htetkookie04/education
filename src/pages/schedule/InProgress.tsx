@@ -51,7 +51,7 @@ export function InProgress() {
 
       {/* Table Card */}
       <div className="border border-gray-200 dark:border-gray-900 rounded-xl bg-white dark:bg-black overflow-hidden shadow-sm">
-        <div className="p-4 flex items-center justify-between border-b border-gray-200 dark:border-gray-900">
+        <div className="p-4 flex items-center justify-between">
           <div className="flex-1" />
           <button
             onClick={() => setIsFilterOpen(true)}

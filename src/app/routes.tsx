@@ -7,6 +7,7 @@ import { InProgress } from '@/pages/schedule/InProgress'
 import { Completed } from '@/pages/schedule/Completed'
 import { OpenTraining } from '@/pages/apply/OpenTraining'
 import { RequestApply } from '@/pages/apply/RequestApply'
+import { RequestApplyDetail } from '@/pages/apply/RequestApplyDetail'
 import { MyApplications } from '@/pages/apply/MyApplications'
 
 export const router = createBrowserRouter([
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
       {
         path: '/apply/request',
         element: <RequestApply />,
+      },
+      {
+        path: '/apply/request/:id',
+        element: <RequestApplyDetail />,
       },
       {
         path: '/my-applications',

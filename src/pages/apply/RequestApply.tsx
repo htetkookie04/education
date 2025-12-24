@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { User, Grid, Check, Minus, AlertTriangle } from 'lucide-react'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import {
@@ -27,6 +28,7 @@ const requestApplyData = [
 ]
 
 export function RequestApply() {
+  const navigate = useNavigate()
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [appliedFilters, setAppliedFilters] = useState<FilterValues | null>(null)
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false)
@@ -121,7 +123,7 @@ export function RequestApply() {
 
       {/* Table Card */}
       <div className="border border-gray-200 dark:border-gray-900 rounded-xl bg-white dark:bg-black overflow-hidden shadow-sm">
-        <div className="p-4 flex items-center justify-between border-b border-gray-200 dark:border-gray-900">
+        <div className="p-4 flex items-center justify-between">
           <div className="flex-1" />
           <button
             onClick={() => setIsFilterOpen(true)}
@@ -154,13 +156,17 @@ export function RequestApply() {
                 </TableRow>
               ) : (
                 requestApplyData.map((item) => (
-                  <TableRow key={item.id}>
+                  <TableRow 
+                    key={item.id}
+                    className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+                    onClick={() => navigate(`/apply/request/${item.educationId}`)}
+                  >
                     <TableCell className="text-center dark:text-gray-100">{item.institution}</TableCell>
                     <TableCell className="text-center dark:text-gray-100">{item.gradeClass}</TableCell>
                     <TableCell className="text-center font-medium dark:text-gray-100">{item.name}</TableCell>
                     <TableCell className="text-center dark:text-gray-100">{item.region}</TableCell>
                     <TableCell className="text-center dark:text-gray-100">{item.period}</TableCell>
-                    <TableCell className="text-center">
+                    <TableCell className="text-center" onClick={(e) => e.stopPropagation()}>
                       <div className="flex items-center justify-center gap-2 sm:gap-2">
                         {/* 주강사 신청 */}
                         {isApplied(item.educationId, 'main') ? (
@@ -168,7 +174,10 @@ export function RequestApply() {
                             <Check className="w-4 h-4 text-green-700 dark:text-green-400" />
                             <span className="text-sm text-green-700 dark:text-green-400">주강사 신청됨</span>
                             <button
-                              onClick={() => handleRemoveClick(item.name, item.educationId, 'main')}
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                handleRemoveClick(item.name, item.educationId, 'main')
+                              }}
                               className="w-7 h-7 flex items-center justify-center bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded text-gray-600 dark:text-gray-400 transition-colors"
                               aria-label="Remove application"
                             >
@@ -190,7 +199,10 @@ export function RequestApply() {
                           <div className="flex items-center px-3 py-2 border border-gray-200 dark:border-gray-700 rounded">
                             <span className="text-sm text-gray-700 dark:text-gray-300">주강사 0/1</span>
                             <button
-                              onClick={() => handleApplyClick(item.name, item.educationId, 'main')}
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                handleApplyClick(item.name, item.educationId, 'main')
+                              }}
                               className="ml-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded transition-colors"
                             >
                               신청
@@ -203,7 +215,10 @@ export function RequestApply() {
                             <Check className="w-4 h-4 text-green-700 dark:text-green-400" />
                             <span className="text-sm text-green-700 dark:text-green-400">보조강사 신청됨</span>
                             <button
-                              onClick={() => handleRemoveClick(item.name, item.educationId, 'assistant')}
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                handleRemoveClick(item.name, item.educationId, 'assistant')
+                              }}
                               className="w-7 h-7 flex items-center justify-center bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded text-gray-600 dark:text-gray-400 transition-colors"
                               aria-label="Remove application"
                             >
@@ -225,7 +240,10 @@ export function RequestApply() {
                           <div className="flex items-center px-3 py-2 border border-gray-200 dark:border-gray-700 rounded">
                             <span className="text-sm text-gray-700 dark:text-gray-300">보조강사 0/2</span>
                             <button
-                              onClick={() => handleApplyClick(item.name, item.educationId, 'assistant')}
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                handleApplyClick(item.name, item.educationId, 'assistant')
+                              }}
                               className="ml-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded transition-colors"
                             >
                               신청

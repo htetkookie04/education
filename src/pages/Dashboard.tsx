@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { User, Grid } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { User } from 'lucide-react'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import { TabCards } from '@/components/TabCards'
 import { Calendar } from '@/components/Calendar'
@@ -22,10 +23,12 @@ const dashboardData = [
     institution: '테스트_1224_북부',
     startDate: '2025-12-28',
     endDate: '2025-12-28',
+    educationId: '16880',
   },
 ]
 
 export function Dashboard() {
+  const navigate = useNavigate()
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [appliedFilters, setAppliedFilters] = useState<FilterValues | null>(null)
   const [activeTabId, setActiveTabId] = useState('available') // Default to "신청할 수 있는 교육"
@@ -66,6 +69,9 @@ export function Dashboard() {
     }
   }
 
+  // Filter data based on active tab - only show data for "available" tab
+  const filteredData = activeTabId === 'available' ? dashboardData : []
+
   return (
     <div className="space-y-6">
       <div className="mb-8">
@@ -97,19 +103,6 @@ export function Dashboard() {
       />
 
       <div className="border border-gray-200 dark:border-gray-900 rounded-xl bg-white dark:bg-black overflow-hidden">
-        <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-900">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-            {getTableTitle()}
-          </h2>
-          <button
-            onClick={() => setIsFilterOpen(true)}
-            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors"
-            aria-label="Filter"
-          >
-            <Grid className="w-5 h-5 text-blue-500 dark:text-blue-400" />
-          </button>
-        </div>
-
         <Table>
           <TableHeader>
             <TableRow>
@@ -120,15 +113,19 @@ export function Dashboard() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {dashboardData.length === 0 ? (
+            {filteredData.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={4} className="h-32 text-center text-gray-500 dark:text-gray-400">
                   데이터가 없습니다.
                 </TableCell>
               </TableRow>
             ) : (
-              dashboardData.map((item) => (
-                <TableRow key={item.id}>
+              filteredData.map((item) => (
+                <TableRow 
+                  key={item.id}
+                  className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+                  onClick={() => navigate(`/apply/request/${item.educationId}`)}
+                >
                   <TableCell className="text-center font-medium dark:text-gray-100">{item.name}</TableCell>
                   <TableCell className="text-center dark:text-gray-100">{item.institution}</TableCell>
                   <TableCell className="text-center dark:text-gray-100">{formatDateShort(item.startDate)}</TableCell>
@@ -139,7 +136,7 @@ export function Dashboard() {
           </TableBody>
         </Table>
 
-        {dashboardData.length > 0 && (
+        {filteredData.length > 0 && (
           <div className="flex items-center justify-end gap-2 p-4 border-t border-gray-200 dark:border-gray-900">
             <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors disabled:opacity-50" disabled>
               <svg
