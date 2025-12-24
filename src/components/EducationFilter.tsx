@@ -58,7 +58,7 @@ export function EducationFilter({ isOpen, onClose, onApply, onReset }: Education
       {/* Filter Dialog - Right Side */}
       <div
         className={cn(
-          "relative bg-white dark:bg-gray-900 rounded-lg shadow-2xl w-[90vw] max-w-md flex flex-col mt-40 mr-8",
+          "relative bg-white dark:bg-gray-900 rounded-lg shadow-2xl w-[90vw] max-w-md flex flex-col my-4 mr-8 max-h-[calc(100vh-2rem)]",
           "transition-all duration-300 ease-in-out",
           isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
         )}
@@ -77,7 +77,7 @@ export function EducationFilter({ isOpen, onClose, onApply, onReset }: Education
         </div>
 
         {/* Filter Content */}
-        <div className="overflow-y-auto p-6 space-y-6 max-h-[60vh]">
+        <div className="overflow-y-auto p-6 space-y-6 flex-1 min-h-0">
           {/* 교육ID */}
           <div>
             <label className="block text-sm font-medium text-gray-900 dark:text-gray-100 mb-2">
