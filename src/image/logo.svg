@@ -1,0 +1,58 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!-- Generator: Adobe Illustrator 28.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!--<svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"-->
+<!--	 y="0px" viewBox="0 0 256.05 53.42" style="enable-background:new 0 0 256.05 53.42;" xml:space="preserve">-->
+<svg width="269" height="56" viewBox="0 0 269 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style type="text/css">
+        .st0{fill:#EA512C;}
+        .st1{fill:#F6AB00;}
+        .st2{fill:#009C7C;}
+        .st3{fill:#2B6DB6;}
+        .st4{fill:#024383;}
+    </style>
+    <g>
+        <g>
+            <path class="st0" d="M118.38,23.22v16.57H101.1V23.22H118.38z M111.83,29.19h-4.18v4.61h4.18V29.19z M124.79,39.78V12.84h6.91
+			v26.94H124.79z"/>
+            <path class="st1" d="M137.32,46.7V32.08h9v-2.74h-9v-6.12h15.92v14.77h-9v2.66h9v6.05H137.32z M167.43,39.78V29.55h-3.39v10.23
+			h-6.91V12.84h6.91v10.37h3.39V12.84h6.91v26.94H167.43z"/>
+            <path class="st2" d="M192.71,29.55v0.07l6.91,6.27l-4.32,4.83l-6.12-5.55l-6.05,5.55l-4.46-4.9l6.91-6.2v-0.07h-6.34v-6.34h6.41
+			v-5.55h6.84v5.55h6.34v6.34H192.71z M211.87,39.78V29.55h-3.39v10.23h-6.91V12.84h6.91v10.37h3.39V12.84h6.91v26.94H211.87z"/>
+            <path class="st3" d="M244.85,34.24v15.7h-16.21v-15.7h4.61v-4.68h-9.65v-6.34h26.07v6.34h-9.58v4.68H244.85z M236.78,3.48
+			c4.61,0,8.35,3.6,8.35,8.35c0,4.54-3.75,8.07-8.35,8.07c-4.47,0-8.28-3.53-8.28-8.07C228.5,7.08,232.32,3.48,236.78,3.48z
+			 M236.78,13.92c1.3,0,2.09-1.01,2.09-2.09c0-1.15-0.79-2.09-2.09-2.09c-1.08,0-2.02,0.94-2.02,2.09
+			C234.77,12.92,235.7,13.92,236.78,13.92z M238.3,40.21h-3.1v3.75h3.1V40.21z"/>
+        </g>
+        <g>
+            <path class="st4" d="M6.41,33.08h0.77c-0.35,3.35,2.65,5.86,6.84,5.86c3.24,0,5.75-1.46,6-3.66c0.24-2.37-2.3-3.52-5.16-4.81
+			c-3.49-1.57-7.53-3.28-7.04-7.99c0.49-4.6,4.81-7.57,10.25-7.57c4.81,0,8.3,2.79,7.88,6.56h-0.77c0.35-3.24-2.34-5.51-6-5.51
+			c-3.21,0-5.72,1.6-5.93,3.94c-0.31,2.62,2.48,3.77,5.48,5.02c3.59,1.5,7.46,3.1,7.01,7.57c-0.45,4.39-4.67,7.53-10.53,7.53
+			C9.96,40.02,5.99,37.03,6.41,33.08z"/>
+            <path class="st4" d="M65.11,15.26L51.85,39.68h-2.13l-4.5-13.5l-7.32,13.5h-2.13l-8.13-24.41h6.94l5.86,17.89l4.43-8.09l-3.28-9.8
+			h6.94l5.86,17.89l9.73-17.89H65.11z"/>
+        </g>
+        <g>
+            <path class="st0" d="M81.35,37.12l-3.94-2.95c0,0-0.01-0.01-0.01-0.01V30.3c0-0.77-0.63-1.4-1.4-1.4l0,0c-0.77,0-1.4,0.63-1.4,1.4
+			v0v4.55c0,0.44,0.21,0.86,0.56,1.13l4.55,3.41c0.65,0.49,1.59,0.32,2.03-0.38C82.15,38.39,81.94,37.56,81.35,37.12z"/>
+            <polygon class="st4" points="89.62,39.68 76.66,15.26 76.66,15.26 76.66,15.26 75.68,15.26 70.02,15.26 56.71,39.68 63.65,39.68
+			76.17,16.18 88.64,39.68 		"/>
+        </g>
+    </g>
+    <defs>
+        <filter id="filter0_i" x="24.9083" y="0" width="22.1854" height="55.3535" filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                           result="hardAlpha"/>
+            <feOffset dx="-4" dy="3"/>
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0.904167 0 0 0 0 0.892865 0 0 0 0 0.892865 0 0 0 0.4 0"/>
+            <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
+        </filter>
+        <linearGradient id="paint0_linear" x1="29" y1="24.5" x2="49" y2="30.5" gradientUnits="userSpaceOnUse">
+            <stop stop-opacity="0.2"/>
+            <stop offset="0.911458" stop-color="white" stop-opacity="0"/>
+        </linearGradient>
+    </defs>
+</svg>
