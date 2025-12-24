@@ -11,7 +11,7 @@ import {
 import { formatDateShort } from '@/lib/utils'
 
 // Mock detail data - in a real app, this would be fetched based on the ID
-const getDetailData = (educationId: string) => {
+const getDetailData = (_educationId: string) => {
   // This would typically be an API call
   return {
     educationId: '16880',

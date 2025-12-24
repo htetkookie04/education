@@ -10,14 +10,13 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { EducationFilter, FilterValues } from '@/components/EducationFilter'
-import { Button } from '@/components/ui/button'
 import { mockData } from '@/data/mock'
 import { formatDateShort } from '@/lib/utils'
 import { toast } from 'sonner'
 
 export function MyApplications() {
   const [isFilterOpen, setIsFilterOpen] = useState(false)
-  const [appliedFilters, setAppliedFilters] = useState<FilterValues | null>(null)
+  const [_appliedFilters, setAppliedFilters] = useState<FilterValues | null>(null)
 
   const handleFilterApply = (filters: FilterValues) => {
     setAppliedFilters(filters)

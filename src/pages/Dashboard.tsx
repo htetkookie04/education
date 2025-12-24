@@ -30,7 +30,7 @@ const dashboardData = [
 export function Dashboard() {
   const navigate = useNavigate()
   const [isFilterOpen, setIsFilterOpen] = useState(false)
-  const [appliedFilters, setAppliedFilters] = useState<FilterValues | null>(null)
+  const [_appliedFilters, setAppliedFilters] = useState<FilterValues | null>(null)
   const [activeTabId, setActiveTabId] = useState('available') // Default to "신청할 수 있는 교육"
 
   const handleFilterApply = (filters: FilterValues) => {
@@ -49,24 +49,6 @@ export function Dashboard() {
     setActiveTabId(tabId)
     // Here you can change the table data based on the selected tab
     console.log('Tab changed to:', tabId)
-  }
-
-  // Get table title based on active tab
-  const getTableTitle = () => {
-    switch (activeTabId) {
-      case 'my-lectures':
-        return '내 출강 리스트'
-      case 'open':
-        return '오픈 예정 교육'
-      case 'available':
-        return '신청할 수 있는 교육'
-      case 'in-progress':
-        return '교육 진행 중'
-      case 'completed':
-        return '교육 완료'
-      default:
-        return '신청할 수 있는 교육'
-    }
   }
 
   // Filter data based on active tab - only show data for "available" tab

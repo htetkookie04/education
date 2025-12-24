@@ -15,7 +15,7 @@ import { formatDateShort } from '@/lib/utils'
 
 export function InProgress() {
   const [isFilterOpen, setIsFilterOpen] = useState(false)
-  const [appliedFilters, setAppliedFilters] = useState<FilterValues | null>(null)
+  const [_appliedFilters, setAppliedFilters] = useState<FilterValues | null>(null)
 
   const handleFilterApply = (filters: FilterValues) => {
     setAppliedFilters(filters)

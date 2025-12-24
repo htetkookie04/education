@@ -14,7 +14,7 @@ import { mockData } from '@/data/mock'
 
 export function MyLectures() {
   const [isFilterOpen, setIsFilterOpen] = useState(false)
-  const [appliedFilters, setAppliedFilters] = useState<FilterValues | null>(null)
+  const [_appliedFilters, setAppliedFilters] = useState<FilterValues | null>(null)
 
   const handleFilterApply = (filters: FilterValues) => {
     setAppliedFilters(filters)

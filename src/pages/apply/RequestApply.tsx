@@ -11,7 +11,6 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { EducationFilter, FilterValues } from '@/components/EducationFilter'
-import { formatDateShort } from '@/lib/utils'
 import { cn } from '@/lib/utils'
 
 // Dashboard-specific data matching the screenshot
@@ -30,7 +29,7 @@ const requestApplyData = [
 export function RequestApply() {
   const navigate = useNavigate()
   const [isFilterOpen, setIsFilterOpen] = useState(false)
-  const [appliedFilters, setAppliedFilters] = useState<FilterValues | null>(null)
+  const [_appliedFilters, setAppliedFilters] = useState<FilterValues | null>(null)
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false)
   const [isCancelModalOpen, setIsCancelModalOpen] = useState(false)
   const [selectedEducation, setSelectedEducation] = useState<{
