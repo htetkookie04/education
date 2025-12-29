@@ -34,36 +34,36 @@ export const router = createBrowserRouter([
         element: <MyLecturesDetail />,
       },
       {
-        path: '/schedule/confirmed',
-        element: <Confirmed />,
-      },
-      {
         path: '/schedule/confirmed/:id',
         element: <ConfirmedDetail />,
       },
       {
-        path: '/schedule/in-progress',
-        element: <InProgress />,
+        path: '/schedule/confirmed',
+        element: <Confirmed />,
       },
       {
         path: '/schedule/in-progress/:id',
         element: <InProgressDetail />,
       },
       {
-        path: '/schedule/completed',
-        element: <Completed />,
+        path: '/schedule/in-progress',
+        element: <InProgress />,
       },
       {
         path: '/schedule/completed/:id',
         element: <CompletedDetail />,
       },
       {
-        path: '/apply/open',
-        element: <OpenTraining />,
+        path: '/schedule/completed',
+        element: <Completed />,
       },
       {
         path: '/apply/open/:id',
         element: <OpenTrainingDetail />,
+      },
+      {
+        path: '/apply/open',
+        element: <OpenTraining />,
       },
       {
         path: '/apply/request',
