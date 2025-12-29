@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { User, Grid } from 'lucide-react'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import {
@@ -14,6 +15,7 @@ import { mockData } from '@/data/mock'
 import { formatDateShort } from '@/lib/utils'
 
 export function OpenTraining() {
+  const navigate = useNavigate()
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [_appliedFilters, setAppliedFilters] = useState<FilterValues | null>(null)
 
@@ -83,7 +85,11 @@ export function OpenTraining() {
                 </TableRow>
               ) : (
                 mockData.openTraining.map((item) => (
-                  <TableRow key={item.id}>
+                  <TableRow 
+                    key={item.id}
+                    className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900"
+                    onClick={() => navigate(`/apply/open/${item.id}`)}
+                  >
                     <TableCell className="text-center">{item.id}</TableCell>
                     <TableCell className="text-center font-medium">{item.name}</TableCell>
                     <TableCell className="text-center">-</TableCell>

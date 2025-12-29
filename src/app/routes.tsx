@@ -4,9 +4,13 @@ import { Dashboard } from '@/pages/Dashboard'
 import { MyLectures } from '@/pages/schedule/MyLectures'
 import { MyLecturesDetail } from '@/pages/schedule/MyLecturesDetail'
 import { Confirmed } from '@/pages/schedule/Confirmed'
+import { ConfirmedDetail } from '@/pages/schedule/ConfirmedDetail'
 import { InProgress } from '@/pages/schedule/InProgress'
+import { InProgressDetail } from '@/pages/schedule/InProgressDetail'
 import { Completed } from '@/pages/schedule/Completed'
+import { CompletedDetail } from '@/pages/schedule/CompletedDetail'
 import { OpenTraining } from '@/pages/apply/OpenTraining'
+import { OpenTrainingDetail } from '@/pages/apply/OpenTrainingDetail'
 import { RequestApply } from '@/pages/apply/RequestApply'
 import { RequestApplyDetail } from '@/pages/apply/RequestApplyDetail'
 import { MyApplications } from '@/pages/apply/MyApplications'
@@ -34,16 +38,32 @@ export const router = createBrowserRouter([
         element: <Confirmed />,
       },
       {
+        path: '/schedule/confirmed/:id',
+        element: <ConfirmedDetail />,
+      },
+      {
         path: '/schedule/in-progress',
         element: <InProgress />,
+      },
+      {
+        path: '/schedule/in-progress/:id',
+        element: <InProgressDetail />,
       },
       {
         path: '/schedule/completed',
         element: <Completed />,
       },
       {
+        path: '/schedule/completed/:id',
+        element: <CompletedDetail />,
+      },
+      {
         path: '/apply/open',
         element: <OpenTraining />,
+      },
+      {
+        path: '/apply/open/:id',
+        element: <OpenTrainingDetail />,
       },
       {
         path: '/apply/request',
