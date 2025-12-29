@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import { AppLayout } from '@/layout/AppLayout'
 import { Dashboard } from '@/pages/Dashboard'
 import { MyLectures } from '@/pages/schedule/MyLectures'
+import { MyLecturesDetail } from '@/pages/schedule/MyLecturesDetail'
 import { Confirmed } from '@/pages/schedule/Confirmed'
 import { InProgress } from '@/pages/schedule/InProgress'
 import { Completed } from '@/pages/schedule/Completed'
@@ -9,6 +10,7 @@ import { OpenTraining } from '@/pages/apply/OpenTraining'
 import { RequestApply } from '@/pages/apply/RequestApply'
 import { RequestApplyDetail } from '@/pages/apply/RequestApplyDetail'
 import { MyApplications } from '@/pages/apply/MyApplications'
+import { MyApplicationsDetail } from '@/pages/apply/MyApplicationsDetail'
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +24,10 @@ export const router = createBrowserRouter([
       {
         path: '/schedule/my-lectures',
         element: <MyLectures />,
+      },
+      {
+        path: '/schedule/my-lectures/:id',
+        element: <MyLecturesDetail />,
       },
       {
         path: '/schedule/confirmed',
@@ -50,6 +56,10 @@ export const router = createBrowserRouter([
       {
         path: '/my-applications',
         element: <MyApplications />,
+      },
+      {
+        path: '/my-applications/:id',
+        element: <MyApplicationsDetail />,
       },
       {
         path: '/',

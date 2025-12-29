@@ -5,10 +5,35 @@ export interface EducationItem {
   startDate: string
   endDate: string
   status?: 'confirmed' | 'in-progress' | 'completed' | 'open' | 'available'
+  classId?: string
+  classStatus?: string
+  session?: string
+  date?: string
+  startTime?: string
+  endTime?: string
+  mainInstructorCount?: number
+  assistantInstructorCount?: number
 }
 
 export const mockData = {
-  myLectures: [] as EducationItem[],
+  myLectures: [
+    {
+      id: '102830',
+      name: '테스트_1224',
+      institution: '테스트_1224_북부',
+      startDate: '2025-12-25',
+      endDate: '2025-12-27',
+      status: 'confirmed',
+      classId: '102830',
+      classStatus: '1차 확정',
+      session: '1차시',
+      date: '2025-12-27',
+      startTime: '15:00',
+      endTime: '08:00',
+      mainInstructorCount: 1,
+      assistantInstructorCount: 0,
+    },
+  ] as EducationItem[],
   
   confirmed: [
     {
@@ -163,19 +188,11 @@ export const mockData = {
   
   myApplications: [
     {
-      id: '10',
-      name: 'AI 머신러닝 기초 과정',
-      institution: '서울시 직업능력개발원',
-      startDate: '2025-03-01',
-      endDate: '2025-03-31',
-      status: 'open',
-    },
-    {
-      id: '11',
-      name: '블록체인 개발 실무',
-      institution: '부산시 교육원',
-      startDate: '2025-03-15',
-      endDate: '2025-04-15',
+      id: '16880',
+      name: '테스트_1224',
+      institution: '테스트_1224_북부',
+      startDate: '2025-12-25',
+      endDate: '2025-12-27',
       status: 'open',
     },
   ] as EducationItem[],

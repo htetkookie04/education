@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { User, Grid } from 'lucide-react'
 import { ThemeToggle } from '@/components/ThemeToggle'
 import {
@@ -13,6 +14,7 @@ import { EducationFilter, FilterValues } from '@/components/EducationFilter'
 import { mockData } from '@/data/mock'
 
 export function MyLectures() {
+  const navigate = useNavigate()
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [_appliedFilters, setAppliedFilters] = useState<FilterValues | null>(null)
 
@@ -75,27 +77,41 @@ export function MyLectures() {
                 <TableHead className="whitespace-nowrap text-center text-lg">종료 시간</TableHead>
                 <TableHead className="whitespace-nowrap text-center text-lg">주 강사 수</TableHead>
                 <TableHead className="whitespace-nowrap text-center text-lg">보조 강사 수</TableHead>
+                <TableHead className="whitespace-nowrap text-center text-lg">비고</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {mockData.myLectures.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={10} className="h-32 text-center text-gray-500 dark:text-gray-400">
+                  <TableCell colSpan={11} className="h-32 text-center text-gray-500 dark:text-gray-400">
                     데이터가 없습니다.
                   </TableCell>
                 </TableRow>
               ) : (
                 mockData.myLectures.map((item) => (
-                  <TableRow key={item.id}>
-                    <TableCell className="text-center">{item.id}</TableCell>
-                    <TableCell className="text-center">{item.status || '-'}</TableCell>
+                  <TableRow 
+                    key={item.id}
+                    className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+                    onClick={() => navigate(`/schedule/my-lectures/${item.classId || item.id}`)}
+                  >
+                    <TableCell className="text-center text-gray-500">{item.classId || item.id}</TableCell>
+                    <TableCell className="text-center">
+                      {item.classStatus ? (
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-md bg-gray-100 dark:bg-gray-800 text-blue-600 dark:text-blue-400 text-sm font-medium">
+                          {item.classStatus}
+                        </span>
+                      ) : (
+                        '-'
+                      )}
+                    </TableCell>
                     <TableCell className="text-center font-medium">{item.name}</TableCell>
                     <TableCell className="text-center">{item.institution}</TableCell>
-                    <TableCell className="text-center">-</TableCell>
-                    <TableCell className="text-center">-</TableCell>
-                    <TableCell className="text-center">-</TableCell>
-                    <TableCell className="text-center">-</TableCell>
-                    <TableCell className="text-center">-</TableCell>
+                    <TableCell className="text-center">{item.session || '-'}</TableCell>
+                    <TableCell className="text-center">{item.date || '-'}</TableCell>
+                    <TableCell className="text-center">{item.startTime || '-'}</TableCell>
+                    <TableCell className="text-center">{item.endTime || '-'}</TableCell>
+                    <TableCell className="text-center text-gray-500">{item.mainInstructorCount ?? '-'}</TableCell>
+                    <TableCell className="text-center text-gray-500">{item.assistantInstructorCount ?? '-'}</TableCell>
                     <TableCell className="text-center">-</TableCell>
                   </TableRow>
                 ))
