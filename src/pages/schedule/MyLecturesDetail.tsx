@@ -9,6 +9,11 @@ import {
   TableRow,
 } from '@/components/ui/table'
 
+interface Instructor {
+  name: string
+  isSelf: boolean
+}
+
 // Mock detail data - in a real app, this would be fetched based on the ID
 const getDetailData = (_classId: string) => {
   // This would typically be an API call
@@ -56,8 +61,8 @@ const getDetailData = (_classId: string) => {
             name: '김철수(일반, 북부-테스트계정)',
             isSelf: true,
           },
-        ],
-        assistantInstructors: [],
+        ] as Instructor[],
+        assistantInstructors: [] as Instructor[],
       },
     ],
   }
