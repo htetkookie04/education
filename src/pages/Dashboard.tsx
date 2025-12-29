@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/table'
 import { formatDateShort } from '@/lib/utils'
 
-// Dashboard-specific data matching the screenshot
+
 const dashboardData = [
   {
     id: '1',
